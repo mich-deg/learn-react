@@ -1,28 +1,49 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export const Avatar = () => {
-  const avatar = "https://i.imgur.com/7vQD0fPs.jpg";
-  const description = "Gregorio Y. Zara";
+import getImageUrl from "../utils";
 
+const Profile = (props) => {
+  const {
+    imageId,
+    name,
+    profession,
+    awards,
+    discovery,
+    imageSize = 70,
+  } = props;
   return (
-    <img
-      className="avatar"
-      src={avatar}
-      alt={description}
-      width={100}
-      height={100}
-    />
+    <section className="profile">
+      <h2>{name}</h2>
+      <img
+        className="avatar"
+        src={getImageUrl(imageId)}
+        alt={name}
+        width={imageSize}
+        height={imageSize}
+      />
+      <ul>
+        <li>
+          <b>Profession:</b> {profession}{" "}
+        </li>
+        <li>
+          <b>Awards: {awards.length}</b> ({awards.join(", ")})
+        </li>
+        <li>
+          <b>Discovered: </b> {discovery}
+        </li>
+      </ul>
+    </section>
   );
 };
 
-const Profile = () => {
-  return (
-    <div>
-      <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
-      <img src="https://i.imgur.com/lICfvbD.jpg" alt="Aklilu Lemma" />
-      <Avatar />
-    </div>
-  );
+Profile.propTypes = {
+  imageId: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  profession: PropTypes.string,
+  awards: PropTypes.string,
+  discovery: PropTypes.string,
+  imageSize: PropTypes.number,
 };
 
 export default Profile;
