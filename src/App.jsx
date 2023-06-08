@@ -5,7 +5,9 @@ import PropTypes from "prop-types";
 // import Gallery from "./component/Gallery";
 
 const Item = ({ name, isPacked }) => {
+  let itemContent = name;
   if (isPacked) {
+    itemContent = name + " ✔";
     // return <li className="item">{name} ✔</li>; // option 1
     // return null; // option 2
 
@@ -16,11 +18,16 @@ const Item = ({ name, isPacked }) => {
 
       /* AND operator && --- option 4 */
 
-    return (
-      <li className="item">
-        {name} {isPacked && '✔'}
-      </li>
-    );
+    // return (
+    //   <li className="item">
+    //     {name} {isPacked && '✔'}
+    //   </li>
+    // );
+  return (
+    <li className="item">
+      {itemContent}
+    </li>
+  );
   }
   // return <li className="item">{name}</li>; // with option 1 or 2
 };
