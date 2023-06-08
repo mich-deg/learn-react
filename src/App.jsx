@@ -10,8 +10,16 @@ const Item = ({ name, isPacked }) => {
     // return null; // option 2
 
     /* ternary operator --- option 3 */
+    // return (
+    //   <li className="item">{isPacked ? <del>{name + " ✔"}</del> : name}</li>
+    // );
+
+      /* AND operator && --- option 4 */
+
     return (
-      <li className="item">{isPacked ? <del>{name + " ✔"}</del> : name}</li>
+      <li className="item">
+        {name} {isPacked && '✔'}
+      </li>
     );
   }
   // return <li className="item">{name}</li>; // with option 1 or 2
