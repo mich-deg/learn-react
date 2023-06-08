@@ -9,10 +9,10 @@ const Item = ({ name, isPacked }) => {
     // return <li className="item">{name} ✔</li>; // option 1
     // return null; // option 2
 
-    /* ternary operator --- option 3 */ 
-   return <li className="item">
-      {isPacked ? name + ' ✔' : name}
-    </li>
+    /* ternary operator --- option 3 */
+    return (
+      <li className="item">{isPacked ? <del>{name + " ✔"}</del> : name}</li>
+    );
   }
   // return <li className="item">{name}</li>; // with option 1 or 2
 };
