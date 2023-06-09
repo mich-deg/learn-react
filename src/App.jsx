@@ -1,29 +1,56 @@
 import React from "react";
-import PropTypes from "prop-types";
+import Button from "./component/Button";
 
-const AlertButton = ({ msg, children }) => {
+// const AlertButton = ({ msg, children }) => {
+//   return (
+//     <button
+//       onClick={() => {
+//         alert(msg);
+//       }}
+//       style={{padding: "4px", margin: "4px"}}
+//     >
+//       {children}
+//     </button>
+//   );
+// };
+
+// AlertButton.propTypes = {
+//   msg: PropTypes.string,
+//   children: PropTypes.children,
+// };
+
+// eslint-disable-next-line react/prop-types
+const PlayButton = ({movieName}) => {
+  
+  const handlePlayClick = () => {
+    alert(`Playing ${movieName}`)
+  }
+
   return (
-    <button
-      onClick={() => {
-        alert(msg);
-      }}
-      style={{padding: "4px", margin: "4px"}}
-    >
-      {children}
-    </button>
-  );
-};
+    <Button onClick={handlePlayClick}>
+      Play {movieName}
+    </Button>
+  )
+}
 
-AlertButton.propTypes = {
-  msg: PropTypes.string,
-  children: PropTypes.children,
-};
+const UploadButton = () => {
+
+  const handleUploadClick = () => {
+    alert("Uploading!")
+  }
+
+  return <Button onClick={handleUploadClick}>
+    Upload Image
+  </Button>
+}
 
 const App = () => {
   return (
     <>
-      <AlertButton msg="Playing">Play Movie</AlertButton>
-      <AlertButton msg="Uploading">Upload Image</AlertButton>
+      <PlayButton movieName="Kiki's Delivery Service" />
+      <UploadButton />
+      {/* <AlertButton msg="Playing">Play Movie</AlertButton>
+      <AlertButton msg="Uploading">Upload Image</AlertButton> */}
     </>
   );
 };
