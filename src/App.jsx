@@ -1,56 +1,30 @@
-import React from "react";
-import Button from "./component/Button";
-
-// const AlertButton = ({ msg, children }) => {
-//   return (
-//     <button
-//       onClick={() => {
-//         alert(msg);
-//       }}
-//       style={{padding: "4px", margin: "4px"}}
-//     >
-//       {children}
-//     </button>
-//   );
-// };
-
-// AlertButton.propTypes = {
-//   msg: PropTypes.string,
-//   children: PropTypes.children,
-// };
-
-// eslint-disable-next-line react/prop-types
-const PlayButton = ({movieName}) => {
-  
-  const handlePlayClick = () => {
-    alert(`Playing ${movieName}`)
-  }
-
-  return (
-    <Button onClick={handlePlayClick}>
-      Play {movieName}
-    </Button>
-  )
-}
-
-const UploadButton = () => {
-
-  const handleUploadClick = () => {
-    alert("Uploading!")
-  }
-
-  return <Button onClick={handleUploadClick}>
-    Upload Image
-  </Button>
-}
+import React, {useState} from "react";
+import { sculptureList } from "../data";
 
 const App = () => {
+  const [index, setIndex] = useState(0)
+
+  function handleClick(){
+    setIndex(index + 1)
+  }
+  let sculpture = sculptureList[index]
   return (
     <>
-      <PlayButton movieName="Kiki's Delivery Service" />
-      <UploadButton />
-      {/* <AlertButton msg="Playing">Play Movie</AlertButton>
-      <AlertButton msg="Uploading">Upload Image</AlertButton> */}
+      <button onClick={handleClick}>
+        Next
+      </button>
+      <h2>
+        <i>
+          {sculpture.name}
+        </i> by {sculpture.artist}
+      </h2>
+      <h3>
+        ({index + 1 } of {sculptureList.length} )
+      </h3>
+      <img src={sculpture.url} alt={sculpture.alt} />
+      <p>
+        {sculpture.description}
+      </p>
     </>
   );
 };
