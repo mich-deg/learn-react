@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import Form3 from "./component/Form3";
-import Form4 from "./component/Form4";
+// import Form4 from "./component/Form4";
+import List from "./component/List";
 
 const App = () => {
   const [position, setPosition] = useState({
@@ -34,7 +35,8 @@ const App = () => {
         }}
       />
       {/* <Form3 /> */}
-      <Form4 />
+      {/* <Form4 /> */}
+      <List />
     </div>
   );
 };
