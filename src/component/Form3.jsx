@@ -7,24 +7,24 @@ const Form3 = () => {
     email: "john.doe@sculpture.com",
   });
 
-  function handleFirstNameChange (e) {
+  function handleFirstNameChange(e) {
     setPerson({
-        ...person, 
-        firstName: e.target.value
-    })
-  } 
+      ...person,
+      firstName: e.target.value,
+    });
+  }
 
-  function handleLastNameChange (e){
+  function handleLastNameChange(e) {
     setPerson({
-        ...person,
-        lastName: e.target.value
-    })
+      ...person,
+      lastName: e.target.value,
+    });
   }
 
   function handleEmailChange(e) {
     setPerson({
       ...person,
-      email: e.target.value
+      email: e.target.value,
     });
   }
 
