@@ -9,36 +9,42 @@ const initialList = [
   { id: 2, title: "Terracotta Army", seen: true },
 ];
 const List4 = () => {
-    const [myList, setMyList] = useState(initialList)
-    const [yourlist, setYourList] = useState(initialList)
+  const [myList, setMyList] = useState(initialList);
+  const [yourlist, setYourList] = useState(initialList);
 
-    function handleToggleMyList(artworkId, nextSeen){
-        setMyList(myList.map(artwork=>{
-            if(artwork.id===artworkId){
-                // Create a *new* object with changes
-                return {
-                    ...artwork, seen:nextSeen
-                }
-            } else {
-                // No changes
-                return artwork
-            }
-        }))
-    }
+  function handleToggleMyList(artworkId, nextSeen) {
+    setMyList(
+      myList.map((artwork) => {
+        if (artwork.id === artworkId) {
+          // Create a *new* object with changes
+          return {
+            ...artwork,
+            seen: nextSeen,
+          };
+        } else {
+          // No changes
+          return artwork;
+        }
+      })
+    );
+  }
 
-    function handleToggleYourList(artworkId, nextSeen){
-        setYourList(yourlist.map(artwork=>{
-            if(artwork.id===artworkId){
-                // Create a *new* object with changes
-                return {
-                    ...artwork, seen:nextSeen
-                }
-            } else {
-                // No changes
-                return artwork
-            }
-        }))
-    }
+  function handleToggleYourList(artworkId, nextSeen) {
+    setYourList(
+      yourlist.map((artwork) => {
+        if (artwork.id === artworkId) {
+          // Create a *new* object with changes
+          return {
+            ...artwork,
+            seen: nextSeen,
+          };
+        } else {
+          // No changes
+          return artwork;
+        }
+      })
+    );
+  }
 
   return (
     <>
