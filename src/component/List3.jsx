@@ -10,6 +10,7 @@ const initialArtists = [
 const List3 = () => {
     const [name, setName] = useState('')
     const [artists, setArtists] = useState(initialArtists)
+    const [list, setList] = useState(initialArtists)
     
     function handleClick(){
         const insertAt = 1
@@ -22,6 +23,12 @@ const List3 = () => {
         ]
         setArtists(nextArtists)
         setName('')
+    }
+
+    function handleList(){
+        const nextList = [...list]
+        nextList.reverse()
+        setList(nextList)
     }
 
     return <div>
@@ -39,6 +46,14 @@ const List3 = () => {
                         {artist.name}
                     </li>
                 ))
+            }
+        </ul>
+        <button onClick={handleList}>Reverse</button>
+        <ul>
+            {
+                list.map(artwork => (<li key={artwork.id}>
+                    {artwork.name}
+                </li>))
             }
         </ul>
     </div>
