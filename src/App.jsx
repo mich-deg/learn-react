@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 // import Form3 from "./component/Form3";
 // import Form4 from "./component/Form4";
-import List from "./component/List";
-import List2 from "./component/List2";
+// import List from "./component/List";
+// import List2 from "./component/List2";
+import ShapeEditor from "./component/ShapeEditor";
 
 const App = () => {
   const [position, setPosition] = useState({
@@ -37,8 +38,9 @@ const App = () => {
       />
       {/* <Form3 /> */}
       {/* <Form4 /> */}
-      <List />
-      <List2 />
+      {/* <List />
+      <List2 /> */}
+      <ShapeEditor />
     </div>
   );
 };
