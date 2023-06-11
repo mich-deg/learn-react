@@ -3,7 +3,8 @@ import React, { useState } from "react";
 // import Form4 from "./component/Form4";
 // import List from "./component/List";
 // import List2 from "./component/List2";
-import ShapeEditor from "./component/ShapeEditor";
+// import ShapeEditor from "./component/ShapeEditor";
+import CounterList from "./component/CounterList";
 
 const App = () => {
   const [position, setPosition] = useState({
@@ -40,7 +41,8 @@ const App = () => {
       {/* <Form4 /> */}
       {/* <List />
       <List2 /> */}
-      <ShapeEditor />
+      {/* <ShapeEditor /> */}
+      <CounterList />
     </div>
   );
 };
