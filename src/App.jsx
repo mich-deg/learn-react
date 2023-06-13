@@ -1,12 +1,10 @@
 import React from "react";
-import Form from "./component/managing-state/Form";
-import TravelPlan from "./component/managing-state/TravelPlan";
+import Accordion from "./component/managing-state/Accordion";
 
 const App = () => {
   return (
     <div>
-      <Form />
-      <TravelPlan />
+      <Accordion />
     </div>
   );
 };
